@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="hero">
+      <h1 class="heading"><strong>Hello World!</strong></h1> 
+      <input
+        type="button"
+        class="change-text-bt"
+        value="Click me si ja"
+        onclick="changeText()"
+      />
+    </div>
+    <div class="anti-hero">
+      <h1 class="heading-2"><strong>Hello World!</strong></h1>
+      <input type="button" class="change-text-bt-2" value="Click me si ja" />
+    </div>
+    <script>
+        // function เปลี่ยนปุ่มที่ 1 
+        // ประกาศ function
+      function changeText() {
+        // access เข้า class ของ heading แรก
+        let headcg = document.querySelector(".heading");
+        // แก้ไข heading 
+        headcg.innerHTML = "Hello Javascript Inner HTML !!";
+      }
+        // เป็นแบบ onclick ใน html เลยไม่ต้องใช้ event listenner และ ประกาศสั่งทำงาน
+
+
+
+        // function ข้างล่างเป็นของปุ่มที่ 2 ใช้สำหรับ eventlistenner
+        // ประกกาศ function ที่ใช้เปลี่ยนข้อความ
+      function changeText2() {
+        let headcg2 = document.querySelector(".heading-2");
+        headcg2.innerHTML = "Hello Javascript Inner HTML 2!!";
+      }
+        // ประกาศ function ของปุ่มที่รับ response
+      function changeAnother() {
+        // access to button
+        let changeText = document.querySelector(".change-text-bt-2");
+        //wainting for click on button  and then run a function to change text
+        changeText.addEventListener("click", changeText2);
+      }
+
+      //activate function
+      changeAnother();
+    </script>
+  </body>
+</html>
